@@ -132,10 +132,11 @@ Render is a cloud platform that makes it easy to deploy static sites.
 3. **Configure Deployment**
    - Connect your GitHub repository
    - Set the following configuration:
+     - **Service type**: Static Site
      - **Name**: trendyperks (or your preferred name)
      - **Branch**: main
-     - **Build Command**: (leave empty for static sites)
-     - **Publish Directory**: `trendyperks` (the folder containing your site)
+     - **Build command**: (leave blank)
+     - **Publish directory**: `trendyperks` (the folder containing your site)
    - Click "Create Static Site"
 
 4. **Custom Domain (Optional)**
@@ -147,18 +148,20 @@ Render is a cloud platform that makes it easy to deploy static sites.
 5. **Environment Variables**
    - No environment variables needed for this static site
 
-#### Render Configuration Example
+#### Render Configuration
+
+This project includes a `render.yaml` configuration file that forces static deployment:
 
 ```yaml
-# render.yaml (optional - for automated setup)
 services:
-  - type: static
+  - type: web
     name: trendyperks
-    repo: yourusername/trendyperks
-    branch: main
+    env: static
     buildCommand: ""
-    publishPath: trendyperks
+    staticPublishPath: .
 ```
+
+This configuration ensures Render treats the project as a static site and doesn't attempt to run npm or look for package.json.
 
 ### Alternative Deployment Options
 
