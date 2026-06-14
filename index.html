@@ -14,8 +14,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quiz-styles.css">
 </head>
 <body>
+    <div id="quiz-overlay">
+    <div id="quiz-container">
+        <div class="quiz-logo">
+            <div class="logo-icon"></div>
+            <span class="logo-text">TrendyPerks</span>
+        </div>
+        
+        <div id="progress-bar-bg">
+            <div id="progress-bar-fill"></div>
+        </div>
+
+        <div id="quiz-content">
+            <div id="question-emoji" class="question-emoji">🎯</div>
+            <h2 id="question-text">What's your main goal right now?</h2>
+            <p class="question-sub">Help us match you with the best opportunities</p>
+            <div id="options-container" class="options-grid">
+                <!-- Options injected by JS -->
+            </div>
+        </div>
+
+        <div id="results-screen">
+            <div class="question-emoji">🎉</div>
+            <h2 style="font-size: 3rem; margin-bottom: 1rem;">Match Found!</h2>
+            <p class="question-sub" style="font-size: 1.25rem; margin-bottom: 2.5rem;">
+                Based on your answers, we've curated the best opportunities for you.
+            </p>
+            <button class="btn-primary" onclick="startExperience()">See My Offers →</button>
+        </div>
+    </div>
+</div>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -226,5 +257,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="quiz-script.js"></script>
 </body>
 </html>
